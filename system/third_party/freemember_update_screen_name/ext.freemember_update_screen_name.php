@@ -85,9 +85,10 @@ class Freemember_update_screen_name_ext {
 	 */
 	public function freemember_update_screen_name($member_id, $data)
 	{
-		// Updates the screen_name with the provided 'first_name' and 'last_name'
-		$data['screen_name'] = $_POST['first_name'] . ' ' . $_POST['last_name'];
-    	return $data;
+		// Updates the members screen_name on register or profile edit via FreeMember
+		// Assumes that your custom member field names match the variables below.
+		$data['screen_name'] = $data['first_name'] . ' ' . $data['last_name'];
+    		return $data;
 	}
 
 	// ----------------------------------------------------------------------
